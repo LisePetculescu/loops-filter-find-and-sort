@@ -84,16 +84,147 @@ const teacher = {
 
 function initApp() {
   console.log("initApp: app.js is running 🎉");
+  // forEachName();
+  // forYears();
+  // loopThroughFirstFiveYears();
+  // loopThroughLastFiveYears();
+  // logNumbers();
+  // forOfTeachers();
+  // teachersOver40();
+  forOfSearchTeachersByName("er");
 }
 
 // ========== forEach ========== //
-
-// ========== for loop ========== //
-for (let i = 1; i < 10; i * 2) {
-  console.log(i);
+function forEachName() {
+  console.log("!!!!forEach!!!!");
+  names.forEach(showName);
 }
 
+function showName(name, index) {
+  if (index === 0) {
+    console.log("første index");
+  }
+
+  console.log(index);
+  console.log(name);
+
+  if (index % 2 === 0) {
+    console.log("hver anden");
+  }
+
+  if (index === names.length - 1) {
+    console.log("last index");
+  }
+}
+
+// ========== for loop ========== //
+
+function forYears() {
+  for (let i = 0; i < years.length; i++) {
+    const year = years[i];
+    console.log(i);
+    console.log(year);
+
+    if (i === years.length - 1) {
+      console.log("this is the last year in the list");
+    }
+
+    if (year == 2023) {
+      console.log("current year");
+    }
+  }
+}
+
+function loopThroughFirstFiveYears() {
+  for (let i = 0; i < years.length; i++) {
+    const year = years[i];
+    if (i < 5) {
+      console.log(i);
+      console.log(year);
+    }
+  }
+}
+
+function loopThroughLastFiveYears() {
+  for (let i = 0; i < years.length; i++) {
+    const year = years[i];
+    if (i > years.length - 5) {
+      console.log("last5Years");
+      console.log(i);
+      console.log(year);
+    }
+  }
+}
+
+function logNumbers() {
+  for (let i = 0; i < 10; i++) {
+    console.log(i);
+  }
+
+  for (let i = 1; i < 11; i++) {
+    console.log(i);
+  }
+
+  for (let i = 10; i >= 0; i--) {
+    console.log(i);
+    if (i == 0) {
+      console.log("liftOff");
+    }
+  }
+
+  for (let i = 1; i < 20; i += 2) {
+    console.log(i);
+  }
+
+  for (let i = 1; i <= 16777216; i *= 2) {
+    console.log(i);
+  }
+
+  for (let i = 111; i <= 138; i += 3) {
+    console.log(i);
+  }
+
+  for (let i = 100; i >= 0; i -= 10) {
+    console.log(i);
+  }
+}
+
+// console.log("!!!!for loop!!!!")
+// for (let i = 0; i < names.length; i++) {
+//   const name = names[i];
+//   console.log(name);
+// }
+
 // ========== for of loop ========== //
+
+function forOfTeachers() {
+  for (const teacher of teachers) {
+    console.log(teacher);
+  }
+}
+
+function teachersOver40() {
+  const results = [];
+  for (const teacher of teachers) {
+    if (teacher.age >= 40) {
+      // console.log(teacher);
+      results.push(teacher);
+    }
+  }
+  console.log(results);
+}
+
+function forOfSearchTeachersByName(searchValue) {
+  const results = [];
+  for (const teachersName of teachers) {
+    // console.log(teachersName.name);
+    if (teachersName.name.includes(searchValue)) {
+      results.push(teachersName);
+    }
+  }
+  // console.log(searchValue);
+  console.log(results);
+}
 
 // ========== for in loop ========== //
 
